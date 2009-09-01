@@ -1,7 +1,39 @@
 = argan
 
-Description goes here.
+When LaTeX is too much, Prince is too expensive (or you prefer open-source
+applications) while you like its extensibility, Zit-Argan (or Argan, or Zit)
+is here to fulfill your needs.
+
+When it's mature, Zit should have CSS styling and an extensible markup.
+
+== Synopsis
+
+This is NOT available now !
+
+    output: example.pdf
+    css:    <%= css('fancy') %>
+    document:
+      - orientation: landscape
+    plugin:
+      credits:
+        - author: Me
+        - author: My friend
+        - title:  42
+        - date:   <%= Time.now %>
+    ---
+    = This is a chapter attribute =
+    %% and this is a comment
+    == ((get subchapter_name)) ==
+    This is an //italic text//. And a **bold** one.
+
+    And this is <span class='test'>raw XHTML</span>
+
+Will generate the corresponding XHTML (with the header options),
+clean it up, pass it to Prawn and generate the final document.
+
+The Object#css method returns the Argan "fancy" style path.
+
 
 == Copyright
 
-Copyright (c) 2009 rhyhann. See LICENSE for details.
+Copyright (c) 2009 Othmane Benkirane. See LICENSE for details.
